@@ -9,8 +9,8 @@ const config: Config = {
         ink: "#050609",
         navy: "#0a1235",
         dusk: "#131b52",
-        blue: "#1d38bd",
-        ice: "#8ea0ec",
+        blue: "#15267d",
+        ice: "#7f90d6",
         white: "#f2f3f7",
       },
       fontFamily: {
