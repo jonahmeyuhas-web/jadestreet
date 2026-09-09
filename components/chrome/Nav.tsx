@@ -27,7 +27,7 @@ export default function Nav() {
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Sections">
           {site.nav.map((n) => (
-            <a key={n.href} href={n.href} className="display text-[17px] text-white/90 transition-colors hover:text-blue">
+            <a key={n.href} href={n.href} className="display text-[17px] text-white/90 transition-colors hover:text-ice">
               {n.label}
             </a>
           ))}
@@ -50,7 +50,7 @@ export default function Nav() {
       >
         <nav className="flex flex-col gap-2" aria-label="Sections">
           {site.nav.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="display text-6xl text-white hover:text-blue">
+            <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="display text-6xl text-white hover:text-ice">
               {n.label}
             </a>
           ))}

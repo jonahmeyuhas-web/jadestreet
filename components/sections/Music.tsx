@@ -18,11 +18,11 @@ export default function Music() {
           <img
             src={asset(featured.art)}
             alt={`${featured.title} artwork`}
-            className="aspect-square w-full object-cover shadow-[0_40px_120px_-20px_rgba(31,71,255,.45)] transition-transform duration-500 group-hover:scale-[1.015]"
+            className="torn aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
           />
         </a>
         <h3 className="display mt-8 text-[clamp(2.5rem,6vw,4.5rem)]">{featured.title}</h3>
-        <p className="display mt-1 text-sm text-blue md:text-base">{featured.kind} · Out now</p>
+        <p className="display mt-1 text-sm text-ice md:text-base">{featured.kind} · Out now</p>
         <div className="mt-6 flex gap-2">
           <a href={featured.spotify} target="_blank" rel="noreferrer" className="btn">Spotify</a>
           <a href={featured.apple} target="_blank" rel="noreferrer" className="btn">Apple Music</a>
@@ -37,14 +37,14 @@ export default function Music() {
                 src={asset(r.art)}
                 alt={`${r.title} artwork`}
                 loading="lazy"
-                className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                className="torn aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </a>
             <div className="mt-3 flex items-baseline justify-between gap-3">
               <span className="display text-xl md:text-2xl">{r.title}</span>
               <span className="display text-xs text-white/50">{year(r.date)}</span>
             </div>
-            <div className="display mt-1 flex gap-3 text-xs text-blue">
+            <div className="display mt-1 flex gap-3 text-xs text-ice">
               <a href={r.spotify} target="_blank" rel="noreferrer" className="hover:text-white">Spotify</a>
               <a href={r.apple} target="_blank" rel="noreferrer" className="hover:text-white">Apple</a>
             </div>

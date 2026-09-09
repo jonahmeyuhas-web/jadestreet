@@ -36,7 +36,7 @@ export default function Hero() {
             </div>
           </div>
           {next && d && (
-            <a href="#live" className="display text-sm text-blue md:text-base">
+            <a href="#live" className="display text-sm text-ice md:text-base">
               Next stop: {next.city} · {d.mon} {d.day}
             </a>
           )}

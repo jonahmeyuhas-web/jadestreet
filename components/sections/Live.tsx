@@ -9,7 +9,7 @@ export default function Live() {
       <SectionHead
         title="Live"
         aside={
-          <a href={site.tour} target="_blank" rel="noreferrer" className="display text-sm text-blue hover:text-white md:text-base">
+          <a href={site.tour} target="_blank" rel="noreferrer" className="display text-sm text-ice hover:text-white md:text-base">
             All dates
           </a>
         }
@@ -24,7 +24,7 @@ export default function Live() {
             return (
               <li key={s.date + s.city} className="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-white/10 py-4 md:grid-cols-[140px_1fr_1fr_auto] md:gap-8 md:py-5">
                 <div className="min-w-0 md:contents">
-                  <span className="display block text-base text-blue md:text-3xl">{d.mon} {d.day}</span>
+                  <span className="display block text-base text-ice md:text-3xl">{d.mon} {d.day}</span>
                   <span className="min-w-0 block">
                     <span className="display block text-2xl md:text-3xl">{s.city}</span>
                     {s.venue && <span className="display block text-xs text-white/50 md:hidden">{s.venue}</span>}

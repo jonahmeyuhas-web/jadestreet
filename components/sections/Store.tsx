@@ -8,7 +8,7 @@ export default function Store() {
         href={site.store}
         target="_blank"
         rel="noreferrer"
-        className="reveal group relative block overflow-hidden bg-blue"
+        className="reveal rough group relative block overflow-hidden bg-blue"
       >
         <div className="flex aspect-[4/5] flex-col justify-between p-6 md:aspect-[21/8] md:p-10">
           <span className="display text-[clamp(3.5rem,11vw,9rem)] leading-[0.85] text-white">Store</span>
@@ -18,7 +18,7 @@ export default function Store() {
               alt=""
               className="w-[55%] max-w-[520px] opacity-95 transition-transform duration-500 group-hover:translate-x-2"
             />
-            <span className="display shrink-0 bg-white px-5 py-3 text-sm text-ink md:text-base">Shop</span>
+            <span className="btn shrink-0 !bg-white !text-ink group-hover:!bg-ink group-hover:!text-white">Shop</span>
           </div>
         </div>
       </a>

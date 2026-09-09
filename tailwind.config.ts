@@ -7,10 +7,10 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#050609",
-        navy: "#0b1230",
-        dusk: "#141d4a",
-        blue: "#1f47ff",
-        sky: "#9db4ff",
+        navy: "#0a1235",
+        dusk: "#131b52",
+        blue: "#1d38bd",
+        ice: "#8ea0ec",
         white: "#f2f3f7",
       },
       fontFamily: {

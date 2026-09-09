@@ -23,17 +23,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#050609" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const vars = `:root{--tex-dark:url("${asset("/brand/grunge-dark.jpg")}");--tex-light:url("${asset("/brand/grunge-light.jpg")}");--mask-box:url("${asset("/brand/rough-box.png")}");--mask-burn:url("${asset("/brand/burn.png")}");--rule:url("${asset("/brand/rule.png")}");}`;
   const fontFace = `@font-face{font-family:"Helvetica Neue Black";src:local("HelveticaNeue-Black"),local("Helvetica Neue Black"),local("HelveticaNeueLTStd-Blk"),url("${asset("/fonts/HelveticaNeueBlack.woff2")}") format("woff2");font-weight:400 900;font-style:normal;font-display:swap;}`;
   return (
     <html lang="en" className={archivo.variable}>
       <head>
-        <style dangerouslySetInnerHTML={{ __html: fontFace }} />
+        <style dangerouslySetInnerHTML={{ __html: vars + fontFace }} />
       </head>
       <body>
         <div className="bgfx" aria-hidden>
           <img src={asset("/brand/hero-mobile.jpg")} alt="" />
         </div>
         {children}
+        <div className="tex tex-dark" aria-hidden />
+        <div className="tex tex-light" aria-hidden />
         <div className="grain" aria-hidden />
       </body>
     </html>

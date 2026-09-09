@@ -9,7 +9,7 @@ export default function Footer() {
         <img src={asset("/brand/wordmark-white.png")} alt={site.name} className="h-5 w-auto" />
         <div className="flex items-center gap-5">
           {site.socials.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-white/70 hover:text-blue">
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-white/70 hover:text-ice">
               <Icon name={s.icon} className="h-5 w-5" />
             </a>
           ))}
