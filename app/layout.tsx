@@ -1,16 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Courier_Prime, Inter } from "next/font/google";
+import { Archivo_Black } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data/site";
 import { asset } from "@/lib/base";
 
-const display = Barlow_Condensed({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display", display: "swap" });
-const mono = Courier_Prime({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono", display: "swap" });
-const sans = Inter({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-sans", display: "swap" });
+const archivo = Archivo_Black({ subsets: ["latin"], weight: "400", variable: "--font-archivo", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: `${site.name} | Official Site`, template: `%s | ${site.name}` },
-  description: `${site.name} is a duo from Los Angeles. Tour dates, music, videos, merch.`,
+  description: `${site.name}. Tour dates, music, videos, merch.`,
   metadataBase: new URL(site.url),
   openGraph: {
     title: `${site.name} | Official Site`,
@@ -22,12 +20,19 @@ export const metadata: Metadata = {
   icons: { icon: asset("/favicon.svg") },
 };
 
-export const viewport: Viewport = { themeColor: "#07070c" };
+export const viewport: Viewport = { themeColor: "#050609" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const fontFace = `@font-face{font-family:"Helvetica Neue Black";src:local("HelveticaNeue-Black"),local("Helvetica Neue Black"),local("HelveticaNeueLTStd-Blk"),url("${asset("/fonts/HelveticaNeueBlack.woff2")}") format("woff2");font-weight:400 900;font-style:normal;font-display:swap;}`;
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${sans.variable}`}>
+    <html lang="en" className={archivo.variable}>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: fontFace }} />
+      </head>
       <body>
+        <div className="bgfx" aria-hidden>
+          <img src={asset("/brand/hero-mobile.jpg")} alt="" />
+        </div>
         {children}
         <div className="grain" aria-hidden />
       </body>

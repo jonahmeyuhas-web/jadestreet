@@ -2,6 +2,8 @@
 
 Single-page band site. Next.js 14 (App Router) exported to static HTML, Tailwind for styling, no other runtime dependencies.
 
+Palette: black, dusk navy, one electric blue. Type: Helvetica Neue Black (licensed file in `public/fonts/`, Archivo Black fallback). No other colors or fonts.
+
 ## Run it
 
 ```bash
@@ -23,6 +25,7 @@ Open http://localhost:3040.
 | `components/chrome/` | Nav, footer, icons, scroll reveal. |
 | `app/globals.css` | Tokens, buttons, grain, reveal, marquee. |
 | `public/brand/` | Wordmarks and hero photo. |
+| `public/fonts/` | Drop the licensed `HelveticaNeueBlack.woff2` here; Archivo Black is the fallback. |
 
 ## Updating content
 

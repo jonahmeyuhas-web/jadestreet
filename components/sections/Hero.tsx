@@ -1,10 +1,13 @@
 import { site } from "@/lib/data/site";
 import { asset } from "@/lib/base";
+import { upcoming, fmtDate } from "@/lib/data/tour";
 
 export default function Hero() {
+  const next = upcoming()[0];
+  const d = next ? fmtDate(next.date) : null;
+
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden">
-      {/* Photo */}
+    <section id="top" className="relative flex h-[100svh] min-h-[600px] items-end overflow-hidden">
       <picture className="absolute inset-0">
         <source media="(max-width: 767px)" srcSet={asset("/brand/hero-mobile.jpg")} />
         <img
@@ -14,32 +17,31 @@ export default function Hero() {
           fetchPriority="high"
         />
       </picture>
-      {/* Grade: deepen the bottom so the wordmark and buttons sit cleanly */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/15 via-45% to-transparent" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 via-45% to-transparent" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-32 md:px-8 md:pb-16">
+      <div className="relative w-full px-5 pb-10 md:px-8 md:pb-12">
         <img
           src={asset("/brand/wordmark-white.png")}
           alt={site.name}
-          className="w-full max-w-[1100px] drop-shadow-[0_8px_30px_rgba(0,0,0,.6)]"
+          className="hero-in w-full max-w-[1000px]"
         />
-        <div className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:items-end md:justify-between">
-          <p className="font-mono text-xs uppercase tracking-widest2 text-paper/80 md:text-sm">
-            {site.tagline} &nbsp;·&nbsp; North America 2026
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a href={site.presave} target="_blank" rel="noreferrer" className="btn btn-paper">
-              Presave the next release
-            </a>
-            <a href="#live" className="btn btn-ghost">Tour dates</a>
+
+        <div className="hero-in-2 mt-10 flex flex-col gap-8 md:mt-12 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h1 className="display text-[clamp(1.55rem,4.2vw,3.6rem)] text-blue">North America 2026</h1>
+            <p className="display mt-1 text-[clamp(1rem,1.6vw,1.35rem)] text-white/90">Tickets on sale now</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a href="#live" className="btn">Tour dates</a>
+              <a href={site.presave} target="_blank" rel="noreferrer" className="btn">Presave</a>
+            </div>
           </div>
+          {next && d && (
+            <a href="#live" className="display text-sm text-blue md:text-base">
+              Next stop: {next.city} · {d.mon} {d.day}
+            </a>
+          )}
         </div>
       </div>
-
-      {/* Scroll cue */}
-      <a href="#live" aria-label="Scroll" className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 font-mono text-[10px] tracking-widest2 text-paper/50 md:block">
-        ↓
-      </a>
     </section>
   );
 }
