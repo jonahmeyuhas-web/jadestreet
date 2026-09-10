@@ -7,6 +7,7 @@ export type Release = {
   apple: string;
   spotify: string; // artist page until per-release links are added
   featured?: boolean;
+  show?: boolean;
 };
 
 const SPOTIFY = "https://open.spotify.com/artist/1tDivTkprR30MAE1Q0nb11";
@@ -20,8 +21,9 @@ export const releases: Release[] = [
     date: "2026-06-12",
     art: "/art/iguana.jpg",
     apple: "https://music.apple.com/us/album/iguana-single/6769920607",
-    spotify: SPOTIFY,
+    spotify: "https://open.spotify.com/track/45om1bmc2YBOvXRWJDXdih",
     featured: true,
+    show: true,
   },
   {
     slug: "the-news-ep",
@@ -30,7 +32,8 @@ export const releases: Release[] = [
     date: "2026-01-16",
     art: "/art/the-news-ep.jpg",
     apple: "https://music.apple.com/us/album/the-news-ep/6776544834",
-    spotify: SPOTIFY,
+    spotify: "https://open.spotify.com/album/3h4gqc6HPujvEWV9Vj4zV5",
+    show: true,
   },
   {
     slug: "feels-like-green",

@@ -11,7 +11,7 @@ export default function Store() {
         className="reveal rough group relative block overflow-hidden bg-blue"
       >
         <div className="flex aspect-[4/5] flex-col justify-between p-6 md:aspect-[21/6] md:p-10">
-          <span className="display text-[clamp(1.25rem,2vw,1.75rem)] leading-[0.9] text-white">Store</span>
+          <span className="display text-3xl md:text-4xl leading-[0.9] text-white">Store</span>
           <div className="flex items-end justify-between gap-6">
             <img
               src={asset("/brand/wordmark-white.png")}

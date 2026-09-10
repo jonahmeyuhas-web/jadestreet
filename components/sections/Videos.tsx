@@ -3,6 +3,7 @@ import { useState } from "react";
 import { videos } from "@/lib/data/videos";
 import { site } from "@/lib/data/site";
 import { SectionHead } from "@/components/chrome/Section";
+import Carousel from "@/components/chrome/Carousel";
 
 function Player({ id, title, thumb }: { id: string; title: string; thumb: string }) {
   const [on, setOn] = useState(false);
@@ -35,7 +36,6 @@ function Player({ id, title, thumb }: { id: string; title: string; thumb: string
 }
 
 export default function Videos() {
-  const [lead, ...others] = videos;
   return (
     <section id="videos" className="scroll-mt-20 px-5 pt-24 md:px-8 md:pt-36">
       <SectionHead
@@ -46,24 +46,22 @@ export default function Videos() {
           </a>
         }
       />
-      <div className="reveal">
-        <Player id={lead.id} title={lead.title} thumb={lead.thumb} />
-        <div className="mt-3 flex items-baseline justify-between">
-          <span className="display text-2xl md:text-4xl">{lead.title}</span>
-          <span className="display text-xs text-white/50 md:text-sm">{lead.kind}</span>
-        </div>
-      </div>
-      <ul className="reveal mt-10 grid gap-8 md:grid-cols-2">
-        {others.map((v) => (
-          <li key={v.id}>
-            <Player id={v.id} title={v.title} thumb={v.thumb} />
-            <div className="mt-3 flex items-baseline justify-between">
-              <span className="display text-xl md:text-2xl">{v.title}</span>
-              <span className="display text-xs text-white/50">{v.kind}</span>
+      <Carousel
+        items={videos}
+        label="Videos"
+        className="reveal"
+        render={(v) => (
+          <div className="mx-auto w-full max-w-[1000px] text-center">
+            {/* Only the active slide is rendered, so this remounts on change
+                and a playing iframe is torn down with it. */}
+            <div data-carousel-media>
+              <Player key={v.id} id={v.id} title={v.title} thumb={v.thumb} />
             </div>
-          </li>
-        ))}
-      </ul>
+            <h3 className="display mt-5 text-2xl md:text-3xl">{v.title}</h3>
+            <p className="display mt-2 text-xs text-white/50">{v.kind}</p>
+          </div>
+        )}
+      />
     </section>
   );
 }
