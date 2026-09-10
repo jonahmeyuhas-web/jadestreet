@@ -4,7 +4,7 @@ export default function SignUp() {
   return (
     <section id="signup" className="scroll-mt-20 px-5 pt-24 md:px-8 md:pt-36">
       <div className="reveal grid gap-8 md:grid-cols-2 md:items-end">
-        <h2 className="display text-[clamp(3.5rem,11vw,9rem)]">Sign up</h2>
+        <h2 className="display text-[clamp(1.25rem,2vw,1.75rem)]">Sign up</h2>
         <div>
           <p className="display text-base text-white/60 md:text-lg">Tour presales and new music, first.</p>
           {site.signupAction ? (

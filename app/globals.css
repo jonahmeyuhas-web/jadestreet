@@ -17,6 +17,7 @@ html { scroll-behavior: smooth; }
 body {
   @apply bg-ink text-white font-sans antialiased;
   overflow-x: hidden;
+  position: relative;
 }
 ::selection { background: var(--blue); color: var(--white); }
 
@@ -32,8 +33,7 @@ body {
 }
 .btn:hover { @apply bg-white text-ink; }
 
-/* Full-page atmosphere: the hero photo blurred to a dusk wash, then two
-   grunge layers on top (stains multiply, scratches and dust screen). */
+/* Full-page atmosphere: the hero photo blurred to a dusk wash. */
 .bgfx {
   position: fixed; inset: 0; z-index: -1; overflow: hidden; background: var(--ink);
 }
@@ -46,12 +46,13 @@ body {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(5,6,9,.2), rgba(5,6,9,.75));
 }
+/* Scratch and dust layer. Absolute over the whole document so it scrolls
+   with the content, like print rather than a screen filter. */
 .tex {
-  pointer-events: none; position: fixed; inset: 0; z-index: 55;
-  background-repeat: repeat; background-size: 1100px 1100px;
+  pointer-events: none; position: absolute; inset: 0; z-index: 55;
+  background-image: var(--tex-light); background-repeat: repeat; background-size: 1100px 1100px;
+  mix-blend-mode: screen; opacity: .2;
 }
-.tex-dark  { background-image: var(--tex-dark);  mix-blend-mode: multiply; opacity: .16; }
-.tex-light { background-image: var(--tex-light); mix-blend-mode: screen;   opacity: .18; background-position: 300px 700px; }
 
 /* Hand-cut edges: rough box for blocks, torn edge for photos. */
 .rough {

@@ -21,7 +21,7 @@ export default function Music() {
             className="torn aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
           />
         </a>
-        <h3 className="display mt-8 text-[clamp(2.5rem,6vw,4.5rem)]">{featured.title}</h3>
+        <h3 className="display mt-6 text-[clamp(1.25rem,2vw,1.75rem)]">{featured.title}</h3>
         <p className="display mt-1 text-sm text-ice md:text-base">{featured.kind} · Out now</p>
         <div className="mt-6 flex gap-2">
           <a href={featured.spotify} target="_blank" rel="noreferrer" className="btn">Spotify</a>
