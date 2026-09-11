@@ -50,6 +50,7 @@ export default function Videos() {
         items={videos}
         label="Videos"
         className="reveal"
+        mediaMaxWidth={1000}
         render={(v) => (
           <div className="mx-auto w-full max-w-[1000px] text-center">
             {/* Only the active slide is rendered, so this remounts on change

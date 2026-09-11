@@ -15,6 +15,7 @@ export default function Music() {
         items={shown}
         label="Releases"
         className="reveal"
+        mediaMaxWidth={520}
         render={(r) => (
           <div className="flex flex-col items-center text-center">
             <a

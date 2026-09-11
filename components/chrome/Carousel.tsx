@@ -32,11 +32,14 @@ export default function Carousel<T>({
   render,
   label,
   className,
+  mediaMaxWidth,
 }: {
   items: T[];
   render: (item: T, i: number) => ReactNode;
   label: string;
   className?: string;
+  /** Width of the media the arrows hug, in px. The arrows sit just outside it. */
+  mediaMaxWidth?: number;
 }) {
   const [i, setI] = useState(0);
   const [slide, setSlide] = useState<HTMLDivElement | null>(null);
@@ -93,6 +96,8 @@ export default function Carousel<T>({
 
   if (!n) return null;
 
+  // Arrow centres sit 28px (mobile) / 44px (desktop) outside the media edge.
+  // The gutters below reserve exactly that much room, so nothing overflows.
   const arrow =
     "group absolute z-10 -translate-y-1/2 p-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-ice";
 
@@ -113,50 +118,51 @@ export default function Carousel<T>({
       }}
       className={`focus:outline-none focus-visible:ring-1 focus-visible:ring-ice/50 ${className ?? ""}`}
     >
-      <div ref={box} className="relative">
-        <div
-          className="px-9 md:px-16"
-          onPointerDown={(e) => {
-            down.current = e.clientX;
-          }}
-          onPointerUp={(e) => {
-            const x = down.current;
-            down.current = null;
-            if (x === null) return;
-            const dx = e.clientX - x;
-            if (Math.abs(dx) > SWIPE) go(dx < 0 ? 1 : -1);
-          }}
-          onPointerCancel={() => {
-            down.current = null;
-          }}
-        >
-          <div key={i} ref={setSlide}>
-            {render(items[i], i)}
+      <div className="px-[30px] md:px-[68px]">
+        <div ref={box} className="relative mx-auto w-full" style={{ maxWidth: mediaMaxWidth }}>
+          <div
+            onPointerDown={(e) => {
+              down.current = e.clientX;
+            }}
+            onPointerUp={(e) => {
+              const x = down.current;
+              down.current = null;
+              if (x === null) return;
+              const dx = e.clientX - x;
+              if (Math.abs(dx) > SWIPE) go(dx < 0 ? 1 : -1);
+            }}
+            onPointerCancel={() => {
+              down.current = null;
+            }}
+          >
+            <div key={i} ref={setSlide}>
+              {render(items[i], i)}
+            </div>
           </div>
-        </div>
 
-        {n > 1 && (
-          <>
-            <button
-              type="button"
-              aria-label="Previous"
-              onClick={() => go(-1)}
-              className={`${arrow} left-0`}
-              style={{ top: mid ?? "50%" }}
-            >
-              <Arrow dir="left" />
-            </button>
-            <button
-              type="button"
-              aria-label="Next"
-              onClick={() => go(1)}
-              className={`${arrow} right-0`}
-              style={{ top: mid ?? "50%" }}
-            >
-              <Arrow dir="right" />
-            </button>
-          </>
-        )}
+          {n > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label="Previous"
+                onClick={() => go(-1)}
+                className={`${arrow} left-[-28px] -translate-x-1/2 md:left-[-44px]`}
+                style={{ top: mid ?? "50%" }}
+              >
+                <Arrow dir="left" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next"
+                onClick={() => go(1)}
+                className={`${arrow} right-[-28px] translate-x-1/2 md:right-[-44px]`}
+                style={{ top: mid ?? "50%" }}
+              >
+                <Arrow dir="right" />
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
       {n > 1 && (
