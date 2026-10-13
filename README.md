@@ -37,4 +37,4 @@ Open http://localhost:3040.
 
 `npm run build` writes a fully static site to `out/`. It runs anywhere: Vercel (zero config), GitHub Pages (workflow included in `.github/workflows/pages.yml`), or any static host.
 
-For GitHub Pages without a custom domain, the workflow sets `NEXT_PUBLIC_BASE_PATH=/jadestreet`. With a custom domain, remove that env line.
+Live at https://jadestreet.band (GitHub Pages custom domain; DNS at Squarespace: four A records on `@` to GitHub's Pages IPs, `www` CNAME to `jonahmeyuhas-web.github.io`). No base path is set. Only set `NEXT_PUBLIC_BASE_PATH` if the site ever moves back under a subpath.

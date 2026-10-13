@@ -29,10 +29,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Served at the root of jadestreet.band, so no base path.
       - run: npm run build
-        env:
-          # Remove this line when a custom domain is attached.
-          NEXT_PUBLIC_BASE_PATH: /jadestreet
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
