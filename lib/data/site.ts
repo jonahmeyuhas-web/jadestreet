@@ -17,7 +17,7 @@ export const site = {
     { label: "Apple Music", href: "https://music.apple.com/us/artist/jade-street/1831136142", icon: "apple" },
     { label: "YouTube", href: "https://www.youtube.com/@jadestreeet", icon: "youtube" },
     { label: "Instagram", href: "https://www.instagram.com/jadestreeet/", icon: "instagram" },
-    { label: "TikTok", href: "https://www.tiktok.com/@jadestreeet", icon: "tiktok" },
+    { label: "TikTok", href: "https://www.tiktok.com/@jadestreeeet", icon: "tiktok" },
   ],
   // `external` links open in a new tab; the rest scroll to a section.
   nav: [
