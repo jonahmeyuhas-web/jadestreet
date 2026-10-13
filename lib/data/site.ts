@@ -7,9 +7,10 @@ export const site = {
   tour: "https://www.bandsintown.com/a/15606489-jade-street",
   store: "https://band-109993.square.site/s/shop?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
   linktree: "https://linktr.ee/Jadestreetlink",
-  // Newsletter: set to your provider's form endpoint (Mailchimp, Laylo,
-  // Buttondown, Formspree...). While empty, the sign-up section links out
-  // to the Linktree mailing list form instead of showing a dead form.
+  // Mailing list lives on Laylo; the Sign up button links here.
+  mailingList: "https://laylo.com/jadestreet",
+  // Optional: a form endpoint to collect emails inline instead. While empty,
+  // the Sign up section shows the button to `mailingList`.
   signupAction: "",
   socials: [
     { label: "Spotify", href: "https://open.spotify.com/artist/1tDivTkprR30MAE1Q0nb11", icon: "spotify" },

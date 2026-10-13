@@ -21,7 +21,7 @@ export default function SignUp() {
             <button type="submit" className="btn shrink-0">Join</button>
           </form>
         ) : (
-          <a href={site.linktree} target="_blank" rel="noreferrer" className="btn mt-5">Join the list</a>
+          <a href={site.mailingList} target="_blank" rel="noreferrer" className="btn mt-5">Join the list</a>
         )}
       </div>
     </section>
