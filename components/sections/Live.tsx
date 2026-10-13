@@ -1,4 +1,3 @@
-import { site } from "@/lib/data/site";
 import { upcoming, fmtDate, supportLabels } from "@/lib/data/tour";
 import { SectionHead } from "@/components/chrome/Section";
 
@@ -6,17 +5,10 @@ export default function Live() {
   const shows = upcoming();
   return (
     <section id="live" className="scroll-mt-20 px-5 pt-24 md:px-8 md:pt-36">
-      <SectionHead
-        title="Live"
-        aside={
-          <a href={site.tour} target="_blank" rel="noreferrer" className="display text-sm text-ice hover:text-white md:text-base">
-            All dates
-          </a>
-        }
-      />
+      <SectionHead title="Live" />
 
       {shows.length === 0 ? (
-        <p className="reveal display text-2xl text-white/60">No dates announced.</p>
+        <p className="reveal display text-xl text-white/60 md:text-2xl">No upcoming concerts or festivals</p>
       ) : (
         <ol className="reveal border-t border-white/10">
           {shows.map((s) => {

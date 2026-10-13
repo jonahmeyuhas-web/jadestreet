@@ -15,6 +15,16 @@ const SPOTIFY = "https://open.spotify.com/artist/1tDivTkprR30MAE1Q0nb11";
 // Newest first. Artwork is pulled from the official releases.
 export const releases: Release[] = [
   {
+    slug: "spider",
+    title: "Spider",
+    kind: "Single",
+    date: "2026-10-02",
+    art: "/art/spider.jpg",
+    apple: "https://music.apple.com/us/album/spider-single/6810000599",
+    spotify: "https://open.spotify.com/track/70OK0hf2bDAk51Jb5mkk7A",
+    show: true,
+  },
+  {
     slug: "iguana",
     title: "Iguana",
     kind: "Single",
@@ -22,7 +32,6 @@ export const releases: Release[] = [
     art: "/art/iguana.jpg",
     apple: "https://music.apple.com/us/album/iguana-single/6769920607",
     spotify: "https://open.spotify.com/track/45om1bmc2YBOvXRWJDXdih",
-    featured: true,
     show: true,
   },
   {
