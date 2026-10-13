@@ -98,8 +98,9 @@ export default function Carousel<T>({
 
   // Arrow centres sit 28px (mobile) / 44px (desktop) outside the media edge.
   // The gutters below reserve exactly that much room, so nothing overflows.
+  // p-2 on phones makes each arrow a 44px tap target.
   const arrow =
-    "group absolute z-10 -translate-y-1/2 p-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-ice";
+    "group absolute z-10 -translate-y-1/2 p-2 md:p-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-ice";
 
   return (
     <div
@@ -121,6 +122,8 @@ export default function Carousel<T>({
       <div className="px-[30px] md:px-[68px]">
         <div ref={box} className="relative mx-auto w-full" style={{ maxWidth: mediaMaxWidth }}>
           <div
+            // Horizontal swipes go to the carousel; vertical ones still scroll the page.
+            style={{ touchAction: "pan-y" }}
             onPointerDown={(e) => {
               down.current = e.clientX;
             }}

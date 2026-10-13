@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#050609" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const vars = `:root{--tex-light:url("${asset("/brand/grunge-light.jpg")}");--mask-box:url("${asset("/brand/rough-box.png")}");--mask-burn:url("${asset("/brand/burn.png")}");--rule:url("${asset("/brand/rule.png")}");}`;
+  const vars = `:root{--tex-light:url("${asset("/brand/scratches.webp")}");--mask-box:url("${asset("/brand/rough-box.png")}");--mask-burn:url("${asset("/brand/burn.png")}");--rule:url("${asset("/brand/rule.png")}");}`;
   const fontFace = `@font-face{font-family:"Helvetica Neue Black";src:local("HelveticaNeue-Black"),local("Helvetica Neue Black"),local("HelveticaNeueLTStd-Blk"),url("${asset("/fonts/HelveticaNeueBlack.woff2")}") format("woff2");font-weight:400 900;font-style:normal;font-display:swap;}`;
   return (
     <html lang="en" className={archivo.variable}>
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <div className="bgfx" aria-hidden>
-          <img src={asset("/brand/hero-mobile.jpg")} alt="" />
+          <img src={asset("/brand/backdrop.jpg")} alt="" decoding="async" />
         </div>
         {children}
         <div className="tex" aria-hidden />

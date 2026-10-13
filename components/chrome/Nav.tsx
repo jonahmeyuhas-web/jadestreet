@@ -20,7 +20,7 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${solid && !open ? "bg-ink/75 backdrop-blur-md" : ""}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${solid && !open ? "bg-ink/90 md:bg-ink/75 md:backdrop-blur-md" : ""}`}>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center px-5 py-4 md:px-8 md:py-5">
         {/* Left: tabs (desktop) / menu (mobile) */}
         <nav className="hidden items-center gap-6 md:flex" aria-label="Sections">

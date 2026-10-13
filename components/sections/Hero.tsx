@@ -2,13 +2,13 @@ import { asset } from "@/lib/base";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative h-[100svh] min-h-[560px] overflow-hidden">
+    <section id="top" className="hero-h relative min-h-[560px] overflow-hidden">
       <picture className="absolute inset-0">
-        <source media="(max-width: 767px)" srcSet={asset("/brand/hero-mobile.jpg")} />
+        <source media="(max-width: 767px)" srcSet={asset("/brand/hero-portrait.jpg")} />
         <img
           src={asset("/brand/hero.jpg")}
           alt=""
-          className="hero-in h-full w-full object-cover object-[62%_center] md:object-center"
+          className="hero-in h-full w-full object-cover"
           fetchPriority="high"
         />
       </picture>
