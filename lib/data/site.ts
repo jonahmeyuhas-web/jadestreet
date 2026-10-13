@@ -4,8 +4,8 @@ export const site = {
   tagline: "A duo from Los Angeles.",
   url: "https://jadestreet.band", // swap for the real domain when it exists
   presave: "https://ffm.to/qemy44b",
-  tour: "https://bnds.us/cb5yeo",
-  store: "https://band-109993.square.site/s/shop",
+  tour: "https://www.bandsintown.com/a/15606489-jade-street",
+  store: "https://band-109993.square.site/s/shop?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
   linktree: "https://linktr.ee/Jadestreetlink",
   // Newsletter: set to your provider's form endpoint (Mailchimp, Laylo,
   // Buttondown, Formspree...). While empty, the sign-up section links out
@@ -18,12 +18,13 @@ export const site = {
     { label: "Instagram", href: "https://www.instagram.com/jadestreeet/", icon: "instagram" },
     { label: "TikTok", href: "https://www.tiktok.com/@jadestreeet", icon: "tiktok" },
   ],
+  // `external` links open in a new tab; the rest scroll to a section.
   nav: [
-    { label: "Live", href: "#live" },
-    { label: "Music", href: "#music" },
-    { label: "Videos", href: "#videos" },
-    { label: "Store", href: "#store" },
-    { label: "Sign Up", href: "#signup" },
+    { label: "Live", href: "https://www.bandsintown.com/a/15606489-jade-street", external: true },
+    { label: "Listen", href: "#music", external: false },
+    { label: "Watch", href: "#videos", external: false },
+    { label: "Store", href: "https://band-109993.square.site/s/shop?utm_source=ig&utm_medium=social&utm_content=link_in_bio", external: true },
+    { label: "Sign Up", href: "#signup", external: false },
   ],
 } as const;
 

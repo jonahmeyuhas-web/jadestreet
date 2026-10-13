@@ -10,7 +10,7 @@ const shown = releases.filter((r) => r.show);
 export default function Music() {
   return (
     <section id="music" className="scroll-mt-20 px-5 pt-24 md:px-8 md:pt-36">
-      <SectionHead title="Music" />
+      <SectionHead title="Listen" />
       <Carousel
         items={shown}
         label="Releases"

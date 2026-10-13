@@ -39,7 +39,7 @@ export default function Videos() {
   return (
     <section id="videos" className="scroll-mt-20 px-5 pt-24 md:px-8 md:pt-36">
       <SectionHead
-        title="Videos"
+        title="Watch"
         aside={
           <a href={site.socials.find((s) => s.icon === "youtube")!.href} target="_blank" rel="noreferrer" className="display text-sm text-ice hover:text-white md:text-base">
             YouTube

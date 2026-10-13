@@ -25,7 +25,7 @@ export default function Nav() {
         {/* Left: tabs (desktop) / menu (mobile) */}
         <nav className="hidden items-center gap-6 md:flex" aria-label="Sections">
           {site.nav.map((n) => (
-            <a key={n.href} href={n.href} className="display text-[17px] text-white/90 transition-colors hover:text-ice">
+            <a key={n.href} href={n.href} {...(n.external ? { target: "_blank", rel: "noreferrer" } : {})} className="display text-[17px] text-white/90 transition-colors hover:text-ice">
               {n.label}
             </a>
           ))}
@@ -68,7 +68,7 @@ export default function Nav() {
       >
         <nav className="flex flex-col gap-2" aria-label="Sections">
           {site.nav.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="display text-6xl text-white hover:text-ice">
+            <a key={n.href} href={n.href} {...(n.external ? { target: "_blank", rel: "noreferrer" } : {})} onClick={() => setOpen(false)} className="display text-6xl text-white hover:text-ice">
               {n.label}
             </a>
           ))}
