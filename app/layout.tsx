@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: asset("/favicon.svg") },
+  icons: {
+    icon: [
+      { url: asset("/favicon.ico"), sizes: "16x16 32x32 48x48" },
+      { url: asset("/favicon-32.png"), type: "image/png", sizes: "32x32" },
+      { url: asset("/icon-192.png"), type: "image/png", sizes: "192x192" },
+      { url: asset("/icon-512.png"), type: "image/png", sizes: "512x512" },
+    ],
+    apple: { url: asset("/apple-touch-icon.png"), sizes: "180x180" },
+  },
 };
 
 export const viewport: Viewport = { themeColor: "#050609" };
