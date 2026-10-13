@@ -8,11 +8,12 @@ const archivo = Archivo_Black({ subsets: ["latin"], weight: "400", variable: "--
 
 export const metadata: Metadata = {
   title: { default: `${site.name} | Official Site`, template: `%s | ${site.name}` },
-  description: `${site.name}. Tour dates, music, videos, merch.`,
+  description: `The official site of ${site.name}. Listen, watch, tour dates and the official store.`,
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${site.name} | Official Site`,
-    description: site.tagline,
+    description: `The official site of ${site.name}. Listen, watch, tour dates and the official store.`,
     images: [{ url: asset("/brand/og.jpg"), width: 1200, height: 800 }],
     type: "website",
   },
